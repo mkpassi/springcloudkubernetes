@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qualix-api-gateway-deployment
+  labels:
+    app: qualix-api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qualix-api-gateway
+  template:
+    metadata:
+      labels:
+        app: qualix-api-gateway
+    spec:
+      containers:
+        - name: qualix-api-gateway
+          image: agnpacr.azurecr.io/springcloud/qualix-api-gateway
+          ports:
+            - containerPort: 8993
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: SPRING_PROFILES_DEFAULT_ACTIVE
+            - name: SPRING_CONFIG_IMPORT
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: SPRING_CONFIG_IMPORT
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: agnpacr

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: qualix-configmap
+data:
+  SPRING_PROFILES_ACTIVE: dev
+  SPRING_PROFILES_DEFAULT_ACTIVE: default
+  SPRING_CONFIG_IMPORT: configserver:http://qualix-configserver:8989/
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://qualix-service-discovery:8992/eureka/

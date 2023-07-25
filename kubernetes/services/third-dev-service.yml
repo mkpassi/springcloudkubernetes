@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qualix-auth
+spec:
+  selector:
+    app: qualix-auth
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8990
+      targetPort: 8990
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qualix-device
+spec:
+  selector:
+    app: qualix-device
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8991
+      targetPort: 8991

@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qualix-configserver
+spec:
+  selector:
+    app: qualix-configserver
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8989
+      targetPort: 8989
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qualix-service-discovery
+spec:
+  selector:
+    app: qualix-service-discovery
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8992
+      targetPort: 8992
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qualix-auth
+spec:
+  selector:
+    app: qualix-auth
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8990
+      targetPort: 8990
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qualix-device
+spec:
+  selector:
+    app: qualix-device
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8991
+      targetPort: 8991
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qualix-api-gateway
+spec:
+  selector:
+    app: qualix-api-gateway
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8993
+      targetPort: 8993
+
