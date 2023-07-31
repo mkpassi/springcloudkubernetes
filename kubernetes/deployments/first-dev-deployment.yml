@@ -1,6 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: zipkin-deployment
+  labels:
+    app: zipkin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zipkin
+  template:
+    metadata:
+      labels:
+        app: zipkin
+    spec:
+      containers:
+        - name: zipkin
+          image: openzipkin/zipkin
+          ports:
+            - containerPort: 9411
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: qualix-configserver-deployment
   labels:
     app: qualix-configserver
@@ -25,6 +48,16 @@ spec:
                 configMapKeyRef:
                   name: qualix-configmap
                   key: SPRING_PROFILES_DEFAULT_ACTIVE
+            - name: SPRING_ZIPKIN_BASEURL
+                valueFrom:
+                  configMapKeyRef:
+                    name: qualix-configmap
+                    key: SPRING_ZIPKIN_BASEURL
+            - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+                valueFrom:
+                  configMapKeyRef:
+                    name: qualix-configmap
+                    key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
         - name: agnpacr

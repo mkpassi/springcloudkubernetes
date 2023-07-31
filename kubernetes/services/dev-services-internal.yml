@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: zipkin
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
     - protocol: TCP
       port: 9411
@@ -19,7 +19,7 @@ metadata:
 spec:
   selector:
     app: qualix-configserver
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8989
@@ -32,7 +32,7 @@ metadata:
 spec:
   selector:
     app: qualix-service-discovery
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8992
@@ -45,7 +45,7 @@ metadata:
 spec:
   selector:
     app: qualix-auth
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8990
@@ -58,7 +58,7 @@ metadata:
 spec:
   selector:
     app: qualix-device
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8991
@@ -71,7 +71,7 @@ metadata:
 spec:
   selector:
     app: qualix-api-gateway
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8993

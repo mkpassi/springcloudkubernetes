@@ -7,3 +7,5 @@ data:
   SPRING_PROFILES_DEFAULT_ACTIVE: default
   SPRING_CONFIG_IMPORT: configserver:http://qualix-configserver:8989/
   EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://qualix-service-discovery:8992/eureka/
+  SPRING_ZIPKIN_BASEURL: http://zipkin:9411
+  MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin:9411/api/v2/spans
