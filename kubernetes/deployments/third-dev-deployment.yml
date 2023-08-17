@@ -36,15 +36,15 @@ spec:
                   name: qualix-configmap
                   key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
             - name: SPRING_ZIPKIN_BASEURL
-                valueFrom:
-                  configMapKeyRef:
-                    name: qualix-configmap
-                    key: SPRING_ZIPKIN_BASEURL
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: SPRING_ZIPKIN_BASEURL
             - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
-                valueFrom:
-                  configMapKeyRef:
-                    name: qualix-configmap
-                    key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
         - name: agnpacr
@@ -88,15 +88,15 @@ spec:
                   name: qualix-configmap
                   key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
             - name: SPRING_ZIPKIN_BASEURL
-                valueFrom:
-                  configMapKeyRef:
-                    name: qualix-configmap
-                    key: SPRING_ZIPKIN_BASEURL
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: SPRING_ZIPKIN_BASEURL
             - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
-                valueFrom:
-                  configMapKeyRef:
-                    name: qualix-configmap
-                    key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
         - name: agnpacr
@@ -141,15 +141,15 @@ spec:
                   name: qualix-configmap
                   key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
             - name: SPRING_ZIPKIN_BASEURL
-                valueFrom:
-                  configMapKeyRef:
-                    name: qualix-configmap
-                    key: SPRING_ZIPKIN_BASEURL
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: SPRING_ZIPKIN_BASEURL
             - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
-                valueFrom:
-                  configMapKeyRef:
-                    name: qualix-configmap
-                    key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
         - name: agnpacr
