@@ -50,10 +50,10 @@ spec:
                   name: qualix-configmap
                   key: SPRING_ZIPKIN_BASEURL
             - name: SPRING_PROFILES_DEFAULT_ACTIVE
-                valueFrom:
-                  configMapKeyRef:
-                    name: qualix-configmap
-                    key: SPRING_PROFILES_DEFAULT_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: qualix-configmap
+                  key: SPRING_PROFILES_DEFAULT_ACTIVE
             - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
               valueFrom:
                 configMapKeyRef:
