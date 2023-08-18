@@ -44,7 +44,7 @@ spec:
           ports:
             - containerPort: 8989
           env:
-            - name: SPRING_PROFILES_ACTIVE
+            - name: SPRING_PROFILES_DEFAULT_ACTIVE
               valueFrom:
                 configMapKeyRef:
                   name: qualix-configmap
