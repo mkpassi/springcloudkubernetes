@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: qualix-service-discovery
-          image: agnpacr.azurecr.io/springcloud/qualix-service-discovery
+          image: agnpandora.azurecr.io/springcloud/qualix-service-discovery
           ports:
             - containerPort: 8992
           env:
@@ -42,4 +42,4 @@ spec:
                   key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
-        - name: agnpacr
+        - name: agnpandora

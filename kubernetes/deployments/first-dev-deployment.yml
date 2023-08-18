@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
         - name: qualix-configserver
-          image: agnpacr.azurecr.io/springcloud/qualix-configserver
+          image: agnpandora.azurecr.io/springcloud/qualix-configserver
           ports:
             - containerPort: 8989
           env:
@@ -61,4 +61,4 @@ spec:
                   key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
-        - name: agnpacr
+        - name: agnpandora

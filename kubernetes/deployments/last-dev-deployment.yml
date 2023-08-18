@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: qualix-api-gateway
-          image: agnpacr.azurecr.io/springcloud/qualix-api-gateway
+          image: agnpandora.azurecr.io/springcloud/qualix-api-gateway
           ports:
             - containerPort: 8993
           env:
@@ -47,4 +47,4 @@ spec:
                   key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
-        - name: agnpacr
+        - name: agnpandora

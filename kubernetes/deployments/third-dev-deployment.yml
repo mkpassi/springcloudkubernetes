@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: qualix-auth
-          image: agnpacr.azurecr.io/springcloud/qualix-auth-service
+          image: agnpandora.azurecr.io/springcloud/qualix-auth-service
           ports:
             - containerPort: 8990
           env:
@@ -47,7 +47,7 @@ spec:
                   key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
-        - name: agnpacr
+        - name: agnpandora
 
 ---
 apiVersion: apps/v1
@@ -68,7 +68,7 @@ spec:
     spec:
       containers:
         - name: qualix-assaying
-          image: agnpacr.azurecr.io/springcloud/qualix-assaying-service
+          image: agnpandora.azurecr.io/springcloud/qualix-assaying-service
           ports:
             - containerPort: 8994
           env:
@@ -99,7 +99,7 @@ spec:
                   key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
-        - name: agnpacr
+        - name: agnpandora
 
 
 ---
@@ -121,7 +121,7 @@ spec:
     spec:
       containers:
         - name: qualix-device
-          image: agnpacr.azurecr.io/springcloud/qualix-device-service
+          image: agnpandora.azurecr.io/springcloud/qualix-device-service
           ports:
             - containerPort: 8991
           env:
@@ -152,4 +152,4 @@ spec:
                   key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
           imagePullPolicy: Always
       imagePullSecrets:
-        - name: agnpacr
+        - name: agnpandora
